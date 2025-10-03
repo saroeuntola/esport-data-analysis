@@ -24,6 +24,7 @@ Set up project:
 Click APP_URL: http://127.0.0.1:8000 to view website
 
 
-## Author
+## Developer
 **Tola**  
+**Kuong**
 
