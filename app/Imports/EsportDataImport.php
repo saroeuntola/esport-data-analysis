@@ -6,9 +6,14 @@ use App\Models\EsportData;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class EsportDataImport implements ToModel
+class EsportDataImport implements ToModel, WithStartRow
 {
-    
+    // Skip the first row if it is header
+    public function startRow(): int
+    {
+        return 2;
+    }
+
     public function model(array $row)
     {
         return new EsportData([
