@@ -12,10 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        
+
       $middleware->group('api', [
         \App\Http\Middleware\CheckApiKey::class,
-        'throttle:api',
+        //'throttle:api',
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ]);
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EsportDataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,7 @@ Route::prefix('v1')->middleware('api')->group(function () {
             'pong' => true
         ]);
     });
-
+    Route::post('/upload-esport', [EsportDataController::class, 'upload']);
   
     // Route::get('/posts', [PostController::class, 'index']);    
     // Route::get('/posts/{id}', [PostController::class, 'show']);   
