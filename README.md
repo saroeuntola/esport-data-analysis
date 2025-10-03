@@ -1,3 +1,5 @@
+
+
 Set up project:
 
 1. run cmd : composer install
@@ -20,3 +22,8 @@ Set up project:
   ➜  APP_URL: http://127.0.0.1:8000
 
 Click APP_URL: http://127.0.0.1:8000 to view website
+
+
+## Author
+**Tola**  
+
