@@ -1,12 +1,14 @@
-set up project:
+Set up project:
 
 1. run cmd : composer install
-2. run cmd : npm install
-3. rename .env.example to .env
-4. in .env APP_URL=http://localhost change to APP_URL=http://127.0.0.1:8000
+2. run cmd: php artisan key:generate
+3. cmd clear cache: php artisan optimize:clear
+4. run cmd : npm install
+5. rename .env.example to .env
+6. in .env APP_URL=http://localhost change to APP_URL=http://127.0.0.1:8000
 
-5. cmd run project: npm run dev 
- after run you will see like this click APP_URL: http://127.0.0.1:8000 to view website
+7. cmd run project: npm run dev 
+ after run you will see like this
   VITE v7.1.9  ready in 365 ms
 
   ➜  Local:   http://localhost:5173/
@@ -17,3 +19,4 @@ set up project:
 
   ➜  APP_URL: http://127.0.0.1:8000
 
+Click APP_URL: http://127.0.0.1:8000 to view website
