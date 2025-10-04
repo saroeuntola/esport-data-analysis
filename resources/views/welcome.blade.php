@@ -7,7 +7,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
 @viteReactRefresh
-@vite(['resources/css/app.css', 'resources/js/app.jsx'])
+@vite(['resources/css/app.css', 'resources/js/main.jsx'])
 
     </head>
     <body>
