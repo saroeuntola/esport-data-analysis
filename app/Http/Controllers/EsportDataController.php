@@ -24,5 +24,22 @@ class EsportDataController extends Controller
             'message' => 'File imported successfully!',
         ]);
     }
-    
+
+
+    public function getAllEsportData()
+    {
+        try {
+            $data = EsportData::all();
+            return response()->json([
+                'success' => true,
+                'esport_data' => $data
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to fetch esport data',
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
 }

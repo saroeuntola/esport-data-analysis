@@ -13,7 +13,7 @@ Route::get('/user', function (Request $request) {
 
 // route api
 Route::prefix('v1')->middleware('api')->group(function () {
- 
+
     Route::post('/upload-data', [EsportDataController::class, 'upload']);
-  
+    Route::get('/esport-data', [EsportDataController::class, 'getAllEsportData']);
 });
