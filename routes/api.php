@@ -10,18 +10,10 @@ Route::get('/user', function (Request $request) {
 
 
 
+
+// route api
 Route::prefix('v1')->middleware('api')->group(function () {
-  //test route 
-    Route::get('/ping', function () {
-        return response()->json([
-            'pong' => true
-        ]);
-    });
-    Route::post('/upload-esport', [EsportDataController::class, 'upload']);
+ 
+    Route::post('/upload-data', [EsportDataController::class, 'upload']);
   
-    // Route::get('/posts', [PostController::class, 'index']);    
-    // Route::get('/posts/{id}', [PostController::class, 'show']);   
-    // Route::post('/posts', [PostController::class, 'store']);     
-    // Route::put('/posts/{id}', [PostController::class, 'update']); 
-    // Route::delete('/posts/{id}', [PostController::class, 'destroy']);
 });
