@@ -42,4 +42,22 @@ class EsportDataController extends Controller
             ], 500);
         }
     }
+
+
+    public function getFilterData(Request $request)
+    {
+        $query = EsportData::query();
+
+        if ($request->has('date')) {
+            $query->where('date', $request->date);
+        }
+        if ($request->has('team')) {
+            $query->where('team', $request->team);
+        }
+        if ($request->has('matches')) {
+            $query->where('matches', $request->matches);
+        }
+
+        return response()->json($query->get());
+    }
 }

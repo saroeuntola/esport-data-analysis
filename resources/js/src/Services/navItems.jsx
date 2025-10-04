@@ -6,9 +6,9 @@ import {
 } from "@heroicons/react/24/outline";
 
 const navItems = [
-    { to: "/", label: "Home", icon: HomeIcon },
-    { to: "/profile", label: "Profile", icon: UserCircleIcon },
-    { to: "/settings", label: "Settings", icon: Cog6ToothIcon },
+    { to: "/", label: "ALL", icon: HomeIcon },
+    { to: "/match-lineup", label: "Match Lineup", icon: UserCircleIcon },
+    { to: "/matches", label: "Matches", icon: Cog6ToothIcon },
 ];
 
 export default navItems;
