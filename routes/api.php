@@ -16,37 +16,60 @@ Route::get('/user', function (Request $request) {
 // route api
 Route::prefix('v1')->middleware('api')->group(function () {
 
-    // Route::post('/upload-data', [EsportDataController::class, 'upload']);
-    // Route::get('/esport-data', [EsportDataController::class, 'getAllEsportData']);
-    // Route::get('/esport-filter', [EsportDataController::class, 'getFilterData']);
+        // Route::post('/upload-data', [EsportDataController::class, 'upload']);
+        // Route::get('/esport-data', [EsportDataController::class, 'getAllEsportData']);
+        // Route::get('/esport-filter', [EsportDataController::class, 'getFilterData']);
+   // Teams
+    Route::prefix('teams')->group(function () {
+        Route::get('get-all', [TeamController::class, 'index']);
+        Route::post('create', [TeamController::class, 'store']);
 
+    });
 
-    // Teams
-    Route::get('get-teams', [TeamController::class, 'index']);
-    Route::post('create-teams', [TeamController::class, 'store']);
+    Route::prefix('team-members')->group(function () {
+        // Members
+        Route::get('get-all', [TeamMemberController::class, 'index']);
+        Route::post('create', [TeamMemberController::class, 'store']);
+    });
 
-    // Members
-    Route::get('get-team-members', [TeamMemberController::class, 'index']);
-    Route::post('create-team-members', [TeamMemberController::class, 'store']);
+    Route::prefix('hero')->group(function () {
+        // Heroes
+        Route::get('get-all', [HeroController::class, 'index']);
+        Route::post('create', [HeroController::class, 'store']);
+    });
 
-    // Heroes
-    Route::get('get-heroes', [HeroController::class, 'index']);
-    Route::post('create-heroes', [HeroController::class, 'store']);
+    Route::prefix('matches-pick')->group(function () {
+         // Matches
+    Route::get('get-all', [MatchPickController::class, 'index']);
+    Route::post('create', [MatchPickController::class, 'store']);
 
-    // Matches
-    Route::get('get-matches-pick', [MatchPickController::class, 'index']);
-    Route::post('create-matches-pick', [MatchPickController::class, 'store']);
+    });
 
-    // Team Stats
-    Route::get('get-team-stats', [TeamStatsController::class, 'index']);
-    Route::post('create-team-stats', [TeamStatsController::class, 'store']);
+    Route::prefix('team-stats')->group(function () {
+         // Team Stats
+    Route::get('get-all', [TeamStatsController::class, 'index']);
+    Route::post('create', [TeamStatsController::class, 'store']);
+    });
 
-    // Player Stats
-    Route::get('get-player-stats', [PlayerStatsController::class, 'index']);
-    Route::post('create-player-stats', [PlayerStatsController::class, 'store']);
-
-    // Player history by hero
+    Route::prefix('player-stats')->group(function () {
+         // Player Stats
+    Route::get('get-all', [PlayerStatsController::class, 'index']);
+    Route::post('create', [PlayerStatsController::class, 'store']);
+       // Player history by hero
     Route::get('get-player/{id}/hero-stats', [PlayerStatsController::class, 'heroStats']);
+    });
+
+   
+
+  
+
+   
+
+   
+
+   
+
+   
 });
 
 

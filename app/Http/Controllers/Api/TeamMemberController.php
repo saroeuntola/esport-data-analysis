@@ -18,7 +18,7 @@ class TeamMemberController extends Controller
         $request->validate([
             'player_name' => 'required|string',
             'team_id' => 'required|exists:teams,id',
-            'role' => 'nullable|in:jungler,mid,marksman,support',
+            'role' => 'nullable|in:jungler,mid,marksman,support,fighter',
             'avatar' => 'nullable|string'
         ]);
 
@@ -26,4 +26,5 @@ class TeamMemberController extends Controller
 
         return response()->json(['message' => 'Member created', 'data' => $member]);
     }
+    
 }
